@@ -153,9 +153,9 @@ export default function Landing() {
             onPause={() => setIsPlaying(false)}
             style={{
               // Kill the “1px seam”
-              width: "101%",
-              height: "101%",
-              marginLeft: "-0.5%",
+              width: "100%",
+              height: "100%",
+              marginLeft: "0%",
               marginTop: "-0.5%",
               display: "block",
 
