@@ -133,7 +133,7 @@ export default function Landing() {
             position: "relative",
 
             // Keeps it from being "wrong size" on short screens
-            maxHeight: "min(48svh, 420px)",
+            maxHeight: "min(52svh, 460px)",
           }}
           onClick={needsTapToPlay ? handlePlay : undefined}
         >
