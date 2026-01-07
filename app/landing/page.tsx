@@ -1,6 +1,39 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
+
 export default function Landing() {
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  const [needsTap, setNeedsTap] = useState(false)
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+
+    const tryPlay = async () => {
+      try {
+        await v.play()
+        setNeedsTap(false)
+      } catch {
+        setNeedsTap(true)
+      }
+    }
+
+    const t = setTimeout(tryPlay, 50)
+    return () => clearTimeout(t)
+  }, [])
+
+  const handleStart = async () => {
+    const v = videoRef.current
+    if (!v) return
+    try {
+      await v.play()
+      setNeedsTap(false)
+    } catch {
+      setNeedsTap(true)
+    }
+  }
+
   return (
     <main
       style={{
@@ -25,7 +58,7 @@ export default function Landing() {
           <div
             style={{
               fontSize: 'clamp(22px, 4vw, 34px)',
-              fontWeight: 500, // medium weight
+              fontWeight: 500,
               letterSpacing: -0.4,
             }}
           >
@@ -36,32 +69,61 @@ export default function Landing() {
         {/* Video */}
         <div
           style={{
-            width: '80%',
-margin: '0 auto',
+            width: 'min(92vw, 520px)',
+            margin: '0 auto',
             borderRadius: 24,
             overflow: 'hidden',
             background: '#000',
             boxShadow: '0 16px 52px rgba(0,0,0,0.18)',
+            border: '2px solid #fff',
+            position: 'relative',
           }}
+          onClick={needsTap ? handleStart : undefined}
         >
           <video
-            src="https://add5n0anh5ufktpp.public.blob.vercel-storage.com/demo.mp4"
+            ref={videoRef}
+            src="/demo.mp4"
+            poster="/demo-poster.jpg"
             autoPlay
-            muted
+            muted={true}
             loop
             playsInline
             preload="auto"
             controls={false}
             disablePictureInPicture
             disableRemotePlayback
+            onPlay={(e) => {
+              const v = e.currentTarget
+              v.muted = false
+              v.volume = 1
+            }}
             style={{
-              width: '105%',
-              height: '105%',
+              width: '101%',
+              height: '101%',
+              marginLeft: '-0.5%',
+              marginTop: '-0.5%',
               display: 'block',
-              pointerEvents: 'none',
+              pointerEvents: needsTap ? 'auto' : 'none',
               userSelect: 'none',
             }}
           />
+
+          {needsTap && (
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'grid',
+                placeItems: 'center',
+                background: 'rgba(0,0,0,0.25)',
+                color: '#fff',
+                fontWeight: 800,
+                letterSpacing: 0.2,
+              }}
+            >
+              Tap to play
+            </div>
+          )}
         </div>
 
         {/* Copy + CTA */}
@@ -69,9 +131,11 @@ margin: '0 auto',
           <div style={{ fontSize: 'clamp(15px, 2vw, 18px)', fontWeight: 700 }}>
             AI-powered fundraising assistant for startups & student organizations.
           </div>
- <div style={{ opacity: 0.7, fontSize: 'clamp(13px, 1.8vw, 16px)' }}>
+
+          <div style={{ opacity: 0.7, fontSize: 'clamp(13px, 1.8vw, 16px)' }}>
             Watch the demo. Join early access to help shape the platform.
           </div>
+
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <a
               href="mailto:info@funduhub.com?subject=FundU%20Early%20Access"
