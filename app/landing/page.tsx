@@ -125,6 +125,8 @@ export default function Landing() {
           style={{
             width: "min(86vw, 460px)",
             justifySelf: "center",
+            maxWidth: "100%",
+            overflowX: "clip",
             margin: "0 auto",
             borderRadius: 24,
             overflow: "hidden",
@@ -160,7 +162,7 @@ export default function Landing() {
 
               // Keep it cinematic; adjust if you prefer contain
               objectFit: "contain",
-              backgroundColor: "#fff",
+              backgroundColor: "#000",
               // Prevent pause/scrub
               pointerEvents: "none",
               userSelect: "none",
