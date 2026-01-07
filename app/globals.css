@@ -8,8 +8,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 /* ===== FundU Coming Soon variables ===== */
-:root{
+:root {
   --bg: #ffa800;
   --white: #ffffff;
   --accent: #6741ff;
@@ -18,7 +24,10 @@
 }
 
 /* IMPORTANT: Do not lock the whole site */
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
 }
@@ -31,7 +40,8 @@ body {
 
   background: var(--bg);
   color: var(--white);
-  font-family: "SF Pro Display","SF Pro Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-family: "SF Pro Display", "SF Pro Text", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-weight: 300;
 
   display: grid;
@@ -62,7 +72,9 @@ body {
   font-size: clamp(32px, 12vw, 68px);
 }
 
-.bottom .u { color: var(--accent); }
+.bottom .u {
+  color: var(--accent);
+}
 
 .logo-wrap {
   position: absolute;
@@ -98,9 +110,13 @@ body {
   cursor: pointer;
 }
 
-.motion-btn[hidden] { display: none; }
+.motion-btn[hidden] {
+  display: none;
+}
 
 /* Desktop-class pointers: ensure button stays hidden */
 @media (hover: hover) and (pointer: fine) {
-  .motion-btn { display: none !important; }
+  .motion-btn {
+    display: none !important;
+  }
 }
