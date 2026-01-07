@@ -123,7 +123,7 @@ export default function Landing() {
         {/* Video (viewport-height constrained + centered) */}
         <div
           style={{
-            width: "min(92vw, 520px)",
+            width: "min(86vw, 460px)",
             justifySelf: "center",
             margin: "0 auto",
             borderRadius: 24,
@@ -133,7 +133,7 @@ export default function Landing() {
             position: "relative",
 
             // Keeps it from being "wrong size" on short screens
-            maxHeight: "calc(52svh, 420px)",
+            maxHeight: "min(48svh, 420px)",
           }}
           onClick={needsTapToPlay ? handlePlay : undefined}
         >
@@ -155,13 +155,12 @@ export default function Landing() {
               // Kill the “1px seam”
               width: "100%",
               height: "100%",
-              marginLeft: "0%",
-              marginTop: "-0.5%",
+              transform: "translateZ(0)",
               display: "block",
 
               // Keep it cinematic; adjust if you prefer contain
               objectFit: "contain",
-              backgroundColor: "#000",
+              backgroundColor: "#fff",
               // Prevent pause/scrub
               pointerEvents: "none",
               userSelect: "none",
