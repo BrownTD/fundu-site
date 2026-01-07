@@ -122,7 +122,7 @@ export default function Landing() {
         >
           <video
             ref={videoRef}
-            src="/demo.mp4" // if using CDN, swap the URL here
+            src="https://add5n0anh5ufktpp.public.blob.vercel-storage.com/demo_ios.mp4"
             poster="/demo-poster.jpg"
             autoPlay
             muted
