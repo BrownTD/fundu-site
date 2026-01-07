@@ -45,7 +45,7 @@ margin: '0 auto',
           }}
         >
           <video
-            src="/demo.mp4"
+            src="https://add5n0anh5ufktpp.public.blob.vercel-storage.com/demo.mp4"
             autoPlay
             muted
             loop
