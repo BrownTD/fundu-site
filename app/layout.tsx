@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://funduhub.com"),
   title: "FundU",
   description:
     "AI-powered fundraising assistant for startups & student organizations.",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "FundU",
     images: [
       {
-        url: "https://funduhub.com/og.png",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "FundU preview",
@@ -48,6 +49,22 @@ export const metadata: Metadata = {
     title: "FundU",
     description:
       "AI-powered fundraising assistant for startups & student organizations.",
-    images: ["https://funduhub.com/og.png"],
+    images: ["/og.png"],
   },
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
