@@ -132,7 +132,7 @@ export default function Landing() {
               height: "100%",
               display: "block",
               objectFit: "contain",
-              backgroundColor: "#000",
+              backgroundColor: "#fff",
               transform: "translateZ(0)",
               pointerEvents: "none",
               userSelect: "none",
