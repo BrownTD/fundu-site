@@ -46,7 +46,7 @@ body {
 
   display: grid;
   place-items: center;
-
+  position: fixed; /* important for absolute children */
   overflow: hidden; /* ONLY coming soon should be non-scroll */
 }
 
@@ -95,6 +95,56 @@ body {
   pointer-events: none;
   filter: none !important;
   box-shadow: none !important;
+}
+
+/* CTA under Penny */
+.cta-wrap {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + min(26vw, 22vh)); /* places it under the centered logo */
+  transform: translateX(-50%);
+  width: min(90vw, 420px);
+  display: flex;
+  justify-content: center;
+}
+
+.demo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 22px;
+  border-radius: 999px;
+
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 16px;
+
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+  animation: funduPulse 1.35s infinite;
+  transform-origin: center;
+}
+
+.demo-btn:active {
+  transform: translateY(1px);
+  animation: none;
+}
+
+@keyframes funduPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+  }
+  55% {
+    transform: scale(1.06);
+    box-shadow: 0 18px 55px rgba(103, 65, 255, 0.35);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+  }
 }
 
 .motion-btn {
