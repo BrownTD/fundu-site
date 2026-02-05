@@ -188,12 +188,12 @@ export default function Landing() {
         {/* Copy */}
         <div style={{ display: "grid", gap: 10 }}>
           <div style={{ fontSize: "clamp(15px, 2vw, 18px)", fontWeight: 700 }}>
-            AI-powered fundraising assistant for startups & student
+            AI-powered fundraising assistant for startups non-profits & student
             organizations.
           </div>
 
           <div style={{ opacity: 0.7, fontSize: "clamp(13px, 1.8vw, 16px)" }}>
-            Watch the demo. Join early access to help shape the platform.
+            We’re building FundU in public. Follow us on LinkedIn for updates and releases.
           </div>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -209,7 +209,7 @@ export default function Landing() {
                 fontSize: 15,
               }}
             >
-              Request Early Access
+              Follow on LinkedIn
             </a>
           </div>
         </div>
