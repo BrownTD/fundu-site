@@ -198,7 +198,7 @@ export default function Landing() {
 
           <div style={{ display: "flex", justifyContent: "center" }}>
             <a
-              href="mailto:info@funduhub.com?subject=FundU%20Early%20Access"
+              href="https://www.linkedin.com/company/funduhub/?trk=follow_company"
               style={{
                 textDecoration: "none",
                 padding: "12px 20px",
