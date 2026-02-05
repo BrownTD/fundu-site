@@ -14,7 +14,7 @@ export default function ComingSoon() {
   return (
     <div className="coming-root">
       <div className="top">
-        We’re building the Future of Student Fundraising.
+        We’re building the Future of Crowdfunding.
       </div>
 
       <div className="logo-wrap">
